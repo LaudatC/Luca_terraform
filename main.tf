@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2" # Change to your AWS region
+  region = "eu-central-1" # Change to your AWS region
 }
 
 resource "aws_security_group" "allow_http" {
@@ -24,7 +24,7 @@ resource "aws_security_group" "allow_http" {
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-0c55b159cbfafe1f0" # Change to the latest AMI in your region
+  ami           = "ami-0292a7daeeda6b851" # Change to the latest AMI in your region
   instance_type = "t2.micro" # Change as needed
   subnet_id     = "subnet-0e75e328d821f006f"
   security_groups = [aws_security_group.allow_http.name]
